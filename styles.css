@@ -10,14 +10,48 @@ body {
 #container {
     width: min(80ch, 100%);
     margin: 0;
-    padding: 1rem;
+    padding: 1rem
 }
 
 .chord-diagram {
-    width: 20ch;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
 }
+
+img {
+    max-width: 20ch;
+}
+
 
 .chord {
     background-color: blue;
     width: 100%;
+}
+
+.chord-section {
+    width: 100%;
+    
+}
+
+.chord-category {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusts automatically */
+    gap: 20px 100px; /* Space between items */
+}
+.chord-category h3 {
+    grid-column: 1 / -1; /* Forces the h3 to span all columns */
+    margin-bottom: 10px;
+}
+
+@media (max-width: 750px) {  /* 👈 Increase this to control when it stacks */
+    .chord-category {
+        grid-template-columns: 1fr; /* Forces a single column layout */
+    }
+    .chord-diagram {
+        width: 80dvw;
+    }
 }
